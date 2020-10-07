@@ -16,7 +16,7 @@ export default class MinutesCron extends Component {
         if(value && value.length > 1) {
             value = value[1].split('/')[1];
         }
-        return (<div className="well">   
+        return (<div className={this.props.cronViewClassName}>   
                {translateFn('Every')} <input type="Number" onChange={this.onChange.bind(this)} value={value} min={1} max={60} /> {translateFn('minute(s)')}
         </div>)
     }

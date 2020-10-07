@@ -60,23 +60,23 @@ export default class MonthlyCron extends Component {
     render() {
         const translateFn = this.props.translate;
         this.state.value = this.props.value;
-        return (<div className="tab-pane" >
-                    <div className="well well-small">
+        return (<div className={this.props.cronViewClassName}>
+                    <div >
                         <input type="radio" onChange={(e) => {this.setState({every:e.target.value}); this.props.onChange(['0',this.state.value[1] === '*' ? '0' : this.state.value[1], this.state.value[2] === '*' ? '0': this.state.value[2],'1','1/1', '?','*'])}} value="1" name="MonthlyRadio" checked={this.state.every === "1" ? true : false} />
                         {translateFn('Day')}
                         <input readOnly={this.state.every !== "1"} type="number" value={this.state.value[3]} onChange={this.onDayChange}/>
                         {translateFn('of every month(s)')}
                     </div>
 
-                    <div className="well well-small">
+                    <div >
                         <input onChange={(e) => {this.setState({every:e.target.value}); this.props.onChange(['0',this.state.value[1] === '*' ? '0' : this.state.value[1], this.state.value[2] === '*' ? '0': this.state.value[2],'L','*', '?','*'])}} type="radio" value="2" name="DailyRadio" checked={this.state.every === "2" ? true : false}/>
                         {translateFn('Last day of every month')}
                     </div>
-                    <div className="well well-small">
+                    <div >
                         <input onChange={(e) => {this.setState({every:e.target.value}); this.props.onChange(['0',this.state.value[1] === '*' ? '0' : this.state.value[1], this.state.value[2] === '*' ? '0': this.state.value[2] ,'LW','*', '?','*'])}} type="radio" value="3" name="DailyRadio" checked={this.state.every === "3" ? true : false}/>
                         {translateFn('On the last weekday of every month')}
                     </div>
-                    <div className="well well-small">
+                    <div >
                         <input type="radio"  onChange={(e) => {this.setState({every:e.target.value});  this.props.onChange(['0',this.state.value[1] === '*' ? '0' : this.state.value[1], this.state.value[2] === '*' ? '0': this.state.value[2],`L-${1}`,'*', '?','*']) }} value="4" name="MonthlyRadio" checked={this.state.every === "4" ? true : false} />
                        
                         <input readOnly={this.state.every !== "4"} type="number" value={this.state.value[3].split('-')[1]} onChange={this.onLastDayChange}/>

@@ -1,4 +1,4 @@
-.cron_builder_bordering {
+/* .cron_builder_bordering {
     border: 1px solid #ddd;
     border-top: none;
     text-align: center;
@@ -47,11 +47,11 @@
     border: 1px solid #d0cbcb;
     padding: 5px;
     background-color: #dddef13d;
-    width: 50%;
+    width: 100%;
 }
 .text_align_left {
     text-align: left;
 }
 .nav li {
     cursor: pointer;
-}
+} */

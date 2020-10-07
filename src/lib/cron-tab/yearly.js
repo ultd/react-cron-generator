@@ -8,7 +8,7 @@ export default  class YearlyCron extends Component {
     }
 
     render() {
-        return (<div>
+        return (<div className={this.props.cronViewClassName}>
             
                 yearly
         </div>)

@@ -53,14 +53,14 @@ export default class DailyCron extends Component {
     render() {
         const translateFn = this.props.translate;
         this.state.value = this.props.value;
-        return (<div className="tab-pane" >
-                    <div className="well well-small">
+        return (<div className={this.props.cronViewClassName}>
+                    <div>
                         <input type="radio" onChange={(e) => {this.setState({ every:true }); this.props.onChange();}} value="1" name="DailyRadio" checked={this.state.every} />
                         <span>{translateFn('Every')}</span>
                         <input disabled={!this.state.every} type="Number" maxLength="2" onChange={this.onDayChange} value={this.state.value[3].split('/')[1] ? this.state.value[3].split('/')[1] :''} />
                         <span>{translateFn('day(s)')}</span>
                     </div>
-                    <div className="well well-small">
+                    <div>
                         <input onChange={(e) => {this.setState({ every:false }); this.props.onChange(['0', this.state.value[1], this.state.value[2],'?','*', 'MON-FRI','*'])}} type="radio" value="2" name="DailyRadio" checked={!this.state.every}/>
                         <span>{translateFn('Every week day')}</span>
                     </div>
