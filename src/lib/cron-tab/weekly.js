@@ -67,22 +67,20 @@ export default class WeeklyCron extends Component {
             <div >
                 <div>
                     <div>
-                        <input type="checkbox" value="MON" onChange={this.onCheck} checked={(this.state.value[5].search('MON') !== -1 ) ? true : false} />{translateFn('Monday')}<br/>
-                        <input type="checkbox" value="WED" onChange={this.onCheck} checked={this.state.value[5].search('WED') !== -1 ? true : false}  />{translateFn('Wednesday')}<br/>
-                        <input type="checkbox" value="FRI" onChange={this.onCheck} checked={(this.state.value[5].search('FRI') !== -1 ) ? true : false}/>{translateFn('Friday')}<br/>
-                        <input type="checkbox" value="SUN" onChange={this.onCheck} checked={this.state.value[5].search('SUN') !== -1 ? true : false}/>{translateFn('Sunday')}
+                        <input type="checkbox" value="MON" onChange={this.onCheck} checked={(this.state.value[5].search('MON') !== -1 ) ? true : false} />&nbsp;{translateFn('Monday')}<br/>
+                        <input type="checkbox" value="TUE" onChange={this.onCheck} checked={this.state.value[5].search('TUE') !== -1 ? true : false}/>&nbsp;{translateFn('Tuesday')}<br />
+                        <input type="checkbox" value="WED" onChange={this.onCheck} checked={this.state.value[5].search('WED') !== -1 ? true : false}  />&nbsp;{translateFn('Wednesday')}<br/>
+                        <input type="checkbox" value="THU" onChange={this.onCheck} checked={this.state.value[5].search('THU') !== -1 ? true : false}/>&nbsp;{translateFn('Thursday')}<br />
+                        <input type="checkbox" value="FRI" onChange={this.onCheck} checked={(this.state.value[5].search('FRI') !== -1 ) ? true : false}/>&nbsp;{translateFn('Friday')}<br/>
+                        <input type="checkbox" value="SAT" onChange={this.onCheck} checked={this.state.value[5].search('SAT') !== -1 ? true : false}/>&nbsp;{translateFn('Saturday')}<br/>
+                        <input type="checkbox" value="SUN" onChange={this.onCheck} checked={this.state.value[5].search('SUN') !== -1 ? true : false}/>&nbsp;{translateFn('Sunday')}<br/>
                     </div>
                 </div>
-                <div >
-                    <div >
-                        <input type="checkbox" value="TUE" onChange={this.onCheck} checked={this.state.value[5].search('TUE') !== -1 ? true : false}/>{translateFn('Tuesday')}<br />
-                        <input type="checkbox" value="THU" onChange={this.onCheck} checked={this.state.value[5].search('THU') !== -1 ? true : false}/>{translateFn('Thursday')}<br />
-                        <input type="checkbox" value="SAT" onChange={this.onCheck} checked={this.state.value[5].search('SAT') !== -1 ? true : false}/>{translateFn('Saturday')}
-                    </div><br /><br />
-                </div>
+
+                        
             </div>
-            {translateFn('Start time')}
-            <Hour onChange={this.onAtHourChange} value={this.state.value[2]} />
+            {translateFn('Start time')}&nbsp;
+            <Hour onChange={this.onAtHourChange} value={this.state.value[2]} />&nbsp;
             <Minutes onChange={this.onAtMinuteChange} value={this.state.value[1]} />
         </div>)
     }
