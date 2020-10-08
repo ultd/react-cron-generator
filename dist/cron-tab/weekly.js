@@ -94,40 +94,40 @@ var WeeklyCron = /*#__PURE__*/function (_Component) {
         value: "MON",
         onChange: this.onCheck,
         checked: this.state.value[5].search('MON') !== -1 ? true : false
-      }), translateFn('Monday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
-        type: "checkbox",
-        value: "WED",
-        onChange: this.onCheck,
-        checked: this.state.value[5].search('WED') !== -1 ? true : false
-      }), translateFn('Wednesday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
-        type: "checkbox",
-        value: "FRI",
-        onChange: this.onCheck,
-        checked: this.state.value[5].search('FRI') !== -1 ? true : false
-      }), translateFn('Friday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
-        type: "checkbox",
-        value: "SUN",
-        onChange: this.onCheck,
-        checked: this.state.value[5].search('SUN') !== -1 ? true : false
-      }), translateFn('Sunday'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+      }), "\xA0", translateFn('Monday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
         value: "TUE",
         onChange: this.onCheck,
         checked: this.state.value[5].search('TUE') !== -1 ? true : false
-      }), translateFn('Tuesday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+      }), "\xA0", translateFn('Tuesday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+        type: "checkbox",
+        value: "WED",
+        onChange: this.onCheck,
+        checked: this.state.value[5].search('WED') !== -1 ? true : false
+      }), "\xA0", translateFn('Wednesday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
         value: "THU",
         onChange: this.onCheck,
         checked: this.state.value[5].search('THU') !== -1 ? true : false
-      }), translateFn('Thursday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+      }), "\xA0", translateFn('Thursday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+        type: "checkbox",
+        value: "FRI",
+        onChange: this.onCheck,
+        checked: this.state.value[5].search('FRI') !== -1 ? true : false
+      }), "\xA0", translateFn('Friday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
         value: "SAT",
         onChange: this.onCheck,
         checked: this.state.value[5].search('SAT') !== -1 ? true : false
-      }), translateFn('Saturday')), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null))), translateFn('Start time'), /*#__PURE__*/React.createElement(Hour, {
+      }), "\xA0", translateFn('Saturday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
+        type: "checkbox",
+        value: "SUN",
+        onChange: this.onCheck,
+        checked: this.state.value[5].search('SUN') !== -1 ? true : false
+      }), "\xA0", translateFn('Sunday'), /*#__PURE__*/React.createElement("br", null)))), translateFn('Start time'), "\xA0", /*#__PURE__*/React.createElement(Hour, {
         onChange: this.onAtHourChange,
         value: this.state.value[2]
-      }), /*#__PURE__*/React.createElement(Minutes, {
+      }), "\xA0", /*#__PURE__*/React.createElement(Minutes, {
         onChange: this.onAtMinuteChange,
         value: this.state.value[1]
       }));

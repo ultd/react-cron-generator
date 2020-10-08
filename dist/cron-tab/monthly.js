@@ -37,19 +37,19 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
       this.state.value = this.props.value;
 
       if (this.state.value[3] === 'L') {
-        this.state.every = "2";
+        this.state.every = '2';
       } else if (this.state.value[3] === 'LW') {
-        this.state.every = "3";
+        this.state.every = '3';
       } else if (this.state.value[3].startsWith('L')) {
-        this.state.every = "4";
+        this.state.every = '4';
       } else {
-        this.state.every = "1";
+        this.state.every = '1';
       }
     }
   }, {
     key: "onDayChange",
     value: function onDayChange(e) {
-      if (parseInt(e.target.value) > 0 && parseInt(e.target.value) <= 31 || e.target.value === "") {
+      if (parseInt(e.target.value) > 0 && parseInt(e.target.value) <= 31 || e.target.value === '') {
         var val = ['0', this.state.value[1] === '*' ? '0' : this.state.value[1], this.state.value[2] === '*' ? '0' : this.state.value[2], this.state.value[3], '1/1', '?', '*'];
         val[3] = "".concat(e.target.value);
         this.props.onChange(val);
@@ -58,7 +58,7 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
   }, {
     key: "onLastDayChange",
     value: function onLastDayChange(e) {
-      if (parseInt(e.target.value) >> 0 && parseInt(e.target.value) <= 31 || e.target.value === "") {
+      if (parseInt(e.target.value) >> 0 && parseInt(e.target.value) <= 31 || e.target.value === '') {
         var val = ['0', this.state.value[1] === '*' ? '0' : this.state.value[1], this.state.value[2] === '*' ? '0' : this.state.value[2], this.state.value[3], '1/1', '?', '*'];
 
         if (e.target.value === '') {
@@ -104,13 +104,13 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
         },
         value: "1",
         name: "MonthlyRadio",
-        checked: this.state.every === "1" ? true : false
-      }), translateFn('Day'), /*#__PURE__*/React.createElement("input", {
-        readOnly: this.state.every !== "1",
+        checked: this.state.every === '1' ? true : false
+      }), "\xA0", translateFn('Day'), "\xA0", /*#__PURE__*/React.createElement("input", {
+        readOnly: this.state.every !== '1',
         type: "number",
         value: this.state.value[3],
         onChange: this.onDayChange
-      }), translateFn('of every month(s)')), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+      }), "\xA0", translateFn('of every month(s)')), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
         onChange: function onChange(e) {
           _this2.setState({
             every: e.target.value
@@ -121,8 +121,8 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
         type: "radio",
         value: "2",
         name: "DailyRadio",
-        checked: this.state.every === "2" ? true : false
-      }), translateFn('Last day of every month')), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+        checked: this.state.every === '2' ? true : false
+      }), "\xA0", translateFn('Last day of every month')), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
         onChange: function onChange(e) {
           _this2.setState({
             every: e.target.value
@@ -133,8 +133,8 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
         type: "radio",
         value: "3",
         name: "DailyRadio",
-        checked: this.state.every === "3" ? true : false
-      }), translateFn('On the last weekday of every month')), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+        checked: this.state.every === '3' ? true : false
+      }), "\xA0", translateFn('On the last weekday of every month')), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
         type: "radio",
         onChange: function onChange(e) {
           _this2.setState({
@@ -145,16 +145,16 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
         },
         value: "4",
         name: "MonthlyRadio",
-        checked: this.state.every === "4" ? true : false
-      }), /*#__PURE__*/React.createElement("input", {
-        readOnly: this.state.every !== "4",
+        checked: this.state.every === '4' ? true : false
+      }), "\xA0", /*#__PURE__*/React.createElement("input", {
+        readOnly: this.state.every !== '4',
         type: "number",
         value: this.state.value[3].split('-')[1],
         onChange: this.onLastDayChange
-      }), translateFn('day(s) before the end of the month')), translateFn('Start time'), /*#__PURE__*/React.createElement(Hour, {
+      }), "\xA0", translateFn('day(s) before the end of the month'), "\xA0"), translateFn('Start time'), "\xA0", /*#__PURE__*/React.createElement(Hour, {
         onChange: this.onAtHourChange,
         value: this.state.value[2]
-      }), /*#__PURE__*/React.createElement(Minutes, {
+      }), "\xA0", /*#__PURE__*/React.createElement(Minutes, {
         onChange: this.onAtMinuteChange,
         value: this.state.value[1]
       }));

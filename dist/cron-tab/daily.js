@@ -46,7 +46,7 @@ var DailyCron = /*#__PURE__*/function (_Component) {
     }
     /**
      * If value is * return 0 else return value
-     * @param {position in array} index 
+     * @param {position in array} index
      */
 
   }, {
@@ -92,13 +92,13 @@ var DailyCron = /*#__PURE__*/function (_Component) {
         value: "1",
         name: "DailyRadio",
         checked: this.state.every
-      }), /*#__PURE__*/React.createElement("span", null, translateFn('Every')), /*#__PURE__*/React.createElement("input", {
+      }), /*#__PURE__*/React.createElement("span", null, "\xA0", translateFn('Every'), "\xA0"), /*#__PURE__*/React.createElement("input", {
         disabled: !this.state.every,
         type: "Number",
         maxLength: "2",
         onChange: this.onDayChange,
         value: this.state.value[3].split('/')[1] ? this.state.value[3].split('/')[1] : ''
-      }), /*#__PURE__*/React.createElement("span", null, translateFn('day(s)'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+      }), /*#__PURE__*/React.createElement("span", null, "\xA0", translateFn('day(s)'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
         onChange: function onChange(e) {
           _this2.setState({
             every: false
@@ -110,10 +110,10 @@ var DailyCron = /*#__PURE__*/function (_Component) {
         value: "2",
         name: "DailyRadio",
         checked: !this.state.every
-      }), /*#__PURE__*/React.createElement("span", null, translateFn('Every week day'))), /*#__PURE__*/React.createElement("span", null, translateFn('Start time')), /*#__PURE__*/React.createElement(Hour, {
+      }), /*#__PURE__*/React.createElement("span", null, "\xA0", translateFn('Every week day'))), /*#__PURE__*/React.createElement("span", null, translateFn('Start time'), "\xA0"), /*#__PURE__*/React.createElement(Hour, {
         onChange: this.onAtHourChange,
         value: this.state.value[2]
-      }), /*#__PURE__*/React.createElement(Minutes, {
+      }), "\xA0", /*#__PURE__*/React.createElement(Minutes, {
         onChange: this.onAtMinuteChange,
         value: this.state.value[1]
       }));

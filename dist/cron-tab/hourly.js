@@ -81,12 +81,12 @@ var HourlyCron = /*#__PURE__*/function (_Component) {
           _this2.props.onChange(['0', '0', '0/1', '1/1', '*', '?', '*']);
         },
         checked: this.state.every
-      }), /*#__PURE__*/React.createElement("span", null, translateFn('Every'), " "), /*#__PURE__*/React.createElement("input", {
+      }), /*#__PURE__*/React.createElement("span", null, "\xA0 ", translateFn('Every'), " "), /*#__PURE__*/React.createElement("input", {
         disabled: !this.state.every,
         type: "Number",
         onChange: this.onHourChange,
         value: this.state.value[2].split('/')[1] ? this.state.value[2].split('/')[1] : ''
-      }), /*#__PURE__*/React.createElement("span", null, translateFn('hour(s)'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React.createElement("span", null, "\xA0", translateFn('hour(s)'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         style: {
           width: '100%'
         }
@@ -100,11 +100,11 @@ var HourlyCron = /*#__PURE__*/function (_Component) {
           _this2.props.onChange();
         },
         checked: !this.state.every
-      }), /*#__PURE__*/React.createElement("span", null, translateFn('At')), /*#__PURE__*/React.createElement(Hour, {
+      }), /*#__PURE__*/React.createElement("span", null, "\xA0", translateFn('At')), "\xA0", /*#__PURE__*/React.createElement(Hour, {
         disabled: this.state.every,
         onChange: this.onAtHourChange,
         value: this.state.value[2]
-      }), /*#__PURE__*/React.createElement(Minutes, {
+      }), "\xA0", /*#__PURE__*/React.createElement(Minutes, {
         disabled: this.state.every,
         onChange: this.onAtMinuteChange,
         value: this.state.value[1]
