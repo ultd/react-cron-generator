@@ -93,6 +93,9 @@ var DailyCron = /*#__PURE__*/function (_Component) {
         name: "DailyRadio",
         checked: this.state.every
       }), /*#__PURE__*/React.createElement("span", null, "\xA0", translateFn('Every'), "\xA0"), /*#__PURE__*/React.createElement("input", {
+        style: {
+          width: '50px'
+        },
         disabled: !this.state.every,
         type: "Number",
         maxLength: "2",

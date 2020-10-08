@@ -9,13 +9,13 @@ const defClassNameProps = {
 	containerClassName: null,
 	headersContainerClassName: null,
 	cronViewClassName: null,
-	resultTextCronName: null
+	resultTextCronName: null,
 }
 
 export default class Cron extends Component {
 	constructor(props) {
 		super(props)
-		this.props = { ...this.props, ...defClassNameProps}
+		this.props = { ...this.props, ...defClassNameProps }
 		this.state = {
 			headers: loadHeaders(this.props.options),
 			locale: this.props.locale ? this.props.locale : 'en',
@@ -81,8 +81,12 @@ export default class Cron extends Component {
 	getHeaders() {
 		return this.state.headers.map((d) => {
 			return (
-				<li key={shortid()} className={this.props.headerItemClassName}>
-					<span onClick={this.tabChanged.bind(this, d)}>{this.translate(d)}</span>
+				<li
+					key={shortid()}
+					onClick={this.tabChanged.bind(this, d)}
+					className={this.props.headerItemClassName}
+				>
+					{this.translate(d)}
 				</li>
 			)
 		})
@@ -162,15 +166,15 @@ export default class Cron extends Component {
 	render() {
 		return (
 			<div className={this.props.containerClassName}>
-				<ul className={this.props.headersContainerClassName}>{this.getHeaders()}</ul>
-				<div>
-					{this.getComponent(this.state.selectedTab)}
-				</div>
+				<ul className={this.props.headersContainerClassName}>
+					{this.getHeaders()}
+				</ul>
+				<div>{this.getComponent(this.state.selectedTab)}</div>
 				{this.props.showResultText && (
 					<div className={this.props.resultTextCronName}>{this.getVal()}</div>
 				)}
 				{this.props.showResultCron && (
-					<div >
+					<div>
 						{this.state.value
 							.toString()
 							.replace(/,/g, ' ')

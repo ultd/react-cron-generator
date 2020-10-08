@@ -76,6 +76,7 @@ export default class DailyCron extends Component {
 					/>
 					<span>&nbsp;{translateFn('Every')}&nbsp;</span>
 					<input
+						style={{ width: '50px' }}
 						disabled={!this.state.every}
 						type='Number'
 						maxLength='2'
@@ -110,7 +111,8 @@ export default class DailyCron extends Component {
 					<span>&nbsp;{translateFn('Every week day')}</span>
 				</div>
 				<span>{translateFn('Start time')}&nbsp;</span>
-				<Hour onChange={this.onAtHourChange} value={this.state.value[2]} />&nbsp;
+				<Hour onChange={this.onAtHourChange} value={this.state.value[2]} />
+				&nbsp;
 				<Minutes onChange={this.onAtMinuteChange} value={this.state.value[1]} />
 			</div>
 		)

@@ -106,6 +106,9 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
         name: "MonthlyRadio",
         checked: this.state.every === '1' ? true : false
       }), "\xA0", translateFn('Day'), "\xA0", /*#__PURE__*/React.createElement("input", {
+        style: {
+          width: '50px'
+        },
         readOnly: this.state.every !== '1',
         type: "number",
         value: this.state.value[3],
@@ -150,8 +153,11 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
         readOnly: this.state.every !== '4',
         type: "number",
         value: this.state.value[3].split('-')[1],
-        onChange: this.onLastDayChange
-      }), "\xA0", translateFn('day(s) before the end of the month'), "\xA0"), translateFn('Start time'), "\xA0", /*#__PURE__*/React.createElement(Hour, {
+        onChange: this.onLastDayChange,
+        style: {
+          width: '50px'
+        }
+      }), "\xA0", translateFn('day(s) before the end of the month'), "\xA0"), /*#__PURE__*/React.createElement("br", null), translateFn('Start time'), "\xA0", /*#__PURE__*/React.createElement(Hour, {
         onChange: this.onAtHourChange,
         value: this.state.value[2]
       }), "\xA0", /*#__PURE__*/React.createElement(Minutes, {

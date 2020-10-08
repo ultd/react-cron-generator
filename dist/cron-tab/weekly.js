@@ -124,7 +124,7 @@ var WeeklyCron = /*#__PURE__*/function (_Component) {
         value: "SUN",
         onChange: this.onCheck,
         checked: this.state.value[5].search('SUN') !== -1 ? true : false
-      }), "\xA0", translateFn('Sunday'), /*#__PURE__*/React.createElement("br", null)))), translateFn('Start time'), "\xA0", /*#__PURE__*/React.createElement(Hour, {
+      }), "\xA0", translateFn('Sunday'), /*#__PURE__*/React.createElement("br", null)))), /*#__PURE__*/React.createElement("br", null), translateFn('Start time'), "\xA0", /*#__PURE__*/React.createElement(Hour, {
         onChange: this.onAtHourChange,
         value: this.state.value[2]
       }), "\xA0", /*#__PURE__*/React.createElement(Minutes, {

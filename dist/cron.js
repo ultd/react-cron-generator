@@ -119,10 +119,9 @@ var Cron = /*#__PURE__*/function (_Component) {
       return this.state.headers.map(function (d) {
         return /*#__PURE__*/React.createElement("li", {
           key: shortid(),
+          onClick: _this3.tabChanged.bind(_this3, d),
           className: _this3.props.headerItemClassName
-        }, /*#__PURE__*/React.createElement("span", {
-          onClick: _this3.tabChanged.bind(_this3, d)
-        }, _this3.translate(d)));
+        }, _this3.translate(d));
       });
     }
   }, {

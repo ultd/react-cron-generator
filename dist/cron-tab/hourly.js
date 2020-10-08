@@ -82,6 +82,9 @@ var HourlyCron = /*#__PURE__*/function (_Component) {
         },
         checked: this.state.every
       }), /*#__PURE__*/React.createElement("span", null, "\xA0 ", translateFn('Every'), " "), /*#__PURE__*/React.createElement("input", {
+        style: {
+          width: '50px'
+        },
         disabled: !this.state.every,
         type: "Number",
         onChange: this.onHourChange,

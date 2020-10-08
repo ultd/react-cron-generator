@@ -79,6 +79,7 @@ export default class WeeklyCron extends Component {
 
                         
             </div>
+            <br/>
             {translateFn('Start time')}&nbsp;
             <Hour onChange={this.onAtHourChange} value={this.state.value[2]} />&nbsp;
             <Minutes onChange={this.onAtMinuteChange} value={this.state.value[1]} />

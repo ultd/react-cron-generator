@@ -105,6 +105,7 @@ export default class MonthlyCron extends Component {
 					/>&nbsp;
 					{translateFn('Day')}&nbsp;
 					<input
+						style={{ width: '50px' }}
 						readOnly={this.state.every !== '1'}
 						type='number'
 						value={this.state.value[3]}
@@ -178,9 +179,11 @@ export default class MonthlyCron extends Component {
 						type='number'
 						value={this.state.value[3].split('-')[1]}
 						onChange={this.onLastDayChange}
+						style={{ width: '50px' }}
 					/>&nbsp;
 					{translateFn('day(s) before the end of the month')}&nbsp;
 				</div>
+				<br/>
 				{translateFn('Start time')}&nbsp;
 				<Hour onChange={this.onAtHourChange} value={this.state.value[2]} />&nbsp;
 				<Minutes onChange={this.onAtMinuteChange} value={this.state.value[1]} />

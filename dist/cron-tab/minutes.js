@@ -36,13 +36,16 @@ var MinutesCron = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/React.createElement("div", {
         className: this.props.cronViewClassName
-      }, translateFn('Every'), " ", /*#__PURE__*/React.createElement("input", {
+      }, translateFn('Every'), ' ', /*#__PURE__*/React.createElement("input", {
         type: "Number",
         onChange: this.onChange.bind(this),
         value: value,
         min: 1,
-        max: 60
-      }), " ", translateFn('minute(s)'));
+        max: 60,
+        style: {
+          width: '50px'
+        }
+      }), ' ', translateFn('minute(s)'));
     }
   }]);
 

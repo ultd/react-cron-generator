@@ -61,6 +61,7 @@ export default class HourlyCron extends Component {
 					/>
 					<span>&nbsp; {translateFn('Every')} </span>
 					<input
+                    	style={{ width: '50px' }}
 						disabled={!this.state.every}
 						type='Number'
 						onChange={this.onHourChange}
