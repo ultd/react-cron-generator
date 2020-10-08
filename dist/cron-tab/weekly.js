@@ -1,3 +1,4 @@
+import _objectSpread from "@babel/runtime/helpers/esm/objectSpread2";
 import _classCallCheck from "@babel/runtime/helpers/esm/classCallCheck";
 import _createClass from "@babel/runtime/helpers/esm/createClass";
 import _assertThisInitialized from "@babel/runtime/helpers/esm/assertThisInitialized";
@@ -24,6 +25,7 @@ var WeeklyCron = /*#__PURE__*/function (_Component) {
     _this.onAtHourChange = _this.onAtHourChange.bind(_assertThisInitialized(_this));
     _this.onAtMinuteChange = _this.onAtMinuteChange.bind(_assertThisInitialized(_this));
     _this.onCheck = _this.onCheck.bind(_assertThisInitialized(_this));
+    _this.friRef = React.createRef();
     return _this;
   }
 
@@ -52,7 +54,9 @@ var WeeklyCron = /*#__PURE__*/function (_Component) {
       if (e.target.checked) {
         this.onDayChecked(val, e);
       } else {
-        this.onDayUnChecked(val, e);
+        if (val[5].length !== 3) {
+          this.onDayUnChecked(val, e);
+        }
       }
 
       this.props.onChange(val);
@@ -83,10 +87,38 @@ var WeeklyCron = /*#__PURE__*/function (_Component) {
       }
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.state.value = this.props.value;
+
+      if (this.state.value) {
+        var newVal = [].concat(this.state.value); // newVal[5] = 'FRI'
+
+        this.setState(_objectSpread({}, this.state, {
+          value: newVal
+        }));
+        setTimeout(function () {
+          return _this2.onCheck({
+            target: {
+              value: 'MON',
+              checked: true
+            }
+          });
+        }, 100);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
+      console.log(this.state.value);
       var translateFn = this.props.translate;
-      this.state.value = this.props.value;
+
+      if (!this.state.value) {
+        return /*#__PURE__*/React.createElement("div", null);
+      }
+
       return /*#__PURE__*/React.createElement("div", {
         className: this.props.cronViewClassName
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
@@ -113,7 +145,8 @@ var WeeklyCron = /*#__PURE__*/function (_Component) {
         type: "checkbox",
         value: "FRI",
         onChange: this.onCheck,
-        checked: this.state.value[5].search('FRI') !== -1 ? true : false
+        checked: this.state.value[5].search('FRI') !== -1 ? true : false,
+        ref: this.friRef
       }), "\xA0", translateFn('Friday'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
         value: "SAT",
