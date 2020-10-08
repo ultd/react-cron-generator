@@ -11,6 +11,7 @@ const App = () => {
 				value={state.value}
 				showResultText={true}
 				showResultCron={true}
+				options={{headers: ['DAILY', 'WEEKLY', 'MONTHLY']}}
 			/>
 		</div>
 	)

@@ -18,6 +18,7 @@ export default class Cron extends Component {
 		super(props)
 		this.props = { ...this.props, ...defClassNameProps }
 		this.state = {
+			// selectedTab:'DAILY',
 			headers: loadHeaders(this.props.options),
 			locale: this.props.locale ? this.props.locale : 'en',
 		}
@@ -135,18 +136,23 @@ export default class Cron extends Component {
 
 	getComponent(tab) {
 		const index = this.state.headers.indexOf(tab)
+
 		if (metadata[index] === -1) {
 			return
 		}
+
 		let selectedMetaData = metadata.find(
 			(data) => data.component.name === tab + 'Cron'
 		)
+
 		if (!selectedMetaData) {
 			selectedMetaData = metadata[index]
 		}
+
 		if (!selectedMetaData) {
 			throw new Error('Value does not match any available headers.')
 		}
+
 		const CronComponent = selectedMetaData.component
 		return (
 			<CronComponent

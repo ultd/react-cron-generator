@@ -29,6 +29,9 @@ export default class MonthlyCron extends Component {
 			this.state.every = '1'
 		}
 	}
+	componentDidMount() {
+		this.onDayChange({ target: { value: 1 } })
+	}
 	onDayChange(e) {
 		if (
 			(parseInt(e.target.value) > 0 && parseInt(e.target.value) <= 31) ||
@@ -102,7 +105,8 @@ export default class MonthlyCron extends Component {
 						value='1'
 						name='MonthlyRadio'
 						checked={this.state.every === '1' ? true : false}
-					/>&nbsp;
+					/>
+					&nbsp;
 					{translateFn('Day')}&nbsp;
 					<input
 						style={{ width: '50px' }}
@@ -110,7 +114,8 @@ export default class MonthlyCron extends Component {
 						type='number'
 						value={this.state.value[3]}
 						onChange={this.onDayChange}
-					/>&nbsp;
+					/>
+					&nbsp;
 					{translateFn('of every month(s)')}
 				</div>
 				<div>
@@ -131,7 +136,8 @@ export default class MonthlyCron extends Component {
 						value='2'
 						name='DailyRadio'
 						checked={this.state.every === '2' ? true : false}
-					/>&nbsp;
+					/>
+					&nbsp;
 					{translateFn('Last day of every month')}
 				</div>
 				<div>
@@ -152,7 +158,8 @@ export default class MonthlyCron extends Component {
 						value='3'
 						name='DailyRadio'
 						checked={this.state.every === '3' ? true : false}
-					/>&nbsp;
+					/>
+					&nbsp;
 					{translateFn('On the last weekday of every month')}
 				</div>
 				<div>
@@ -173,19 +180,22 @@ export default class MonthlyCron extends Component {
 						value='4'
 						name='MonthlyRadio'
 						checked={this.state.every === '4' ? true : false}
-					/>&nbsp;
+					/>
+					&nbsp;
 					<input
 						readOnly={this.state.every !== '4'}
 						type='number'
 						value={this.state.value[3].split('-')[1]}
 						onChange={this.onLastDayChange}
 						style={{ width: '50px' }}
-					/>&nbsp;
+					/>
+					&nbsp;
 					{translateFn('day(s) before the end of the month')}&nbsp;
 				</div>
-				<br/>
+				<br />
 				{translateFn('Start time')}&nbsp;
-				<Hour onChange={this.onAtHourChange} value={this.state.value[2]} />&nbsp;
+				<Hour onChange={this.onAtHourChange} value={this.state.value[2]} />
+				&nbsp;
 				<Minutes onChange={this.onAtMinuteChange} value={this.state.value[1]} />
 			</div>
 		)

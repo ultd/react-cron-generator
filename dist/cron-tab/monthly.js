@@ -47,6 +47,15 @@ var MonthlyCron = /*#__PURE__*/function (_Component) {
       }
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.onDayChange({
+        target: {
+          value: 1
+        }
+      });
+    }
+  }, {
     key: "onDayChange",
     value: function onDayChange(e) {
       if (parseInt(e.target.value) > 0 && parseInt(e.target.value) <= 31 || e.target.value === '') {

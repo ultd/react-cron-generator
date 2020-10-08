@@ -37,6 +37,14 @@ var DailyCron = /*#__PURE__*/function (_Component) {
       this.state.every = this.props.value[3] !== '?';
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.setState({
+        every: true
+      });
+      this.props.onChange();
+    }
+  }, {
     key: "onDayChange",
     value: function onDayChange(e) {
       if (!e.target.value || e.target.value > 0 && e.target.value < 32) {
@@ -100,7 +108,7 @@ var DailyCron = /*#__PURE__*/function (_Component) {
         type: "Number",
         maxLength: "2",
         onChange: this.onDayChange,
-        value: this.state.value[3].split('/')[1] ? this.state.value[3].split('/')[1] : ''
+        value: this.state.value[3].split('/')[1] ? this.state.value[3].split('/')[1] : '1'
       }), /*#__PURE__*/React.createElement("span", null, "\xA0", translateFn('day(s)'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
         onChange: function onChange(e) {
           _this2.setState({

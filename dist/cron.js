@@ -31,6 +31,7 @@ var Cron = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
     _this.props = _objectSpread({}, _this.props, {}, defClassNameProps);
     _this.state = {
+      // selectedTab:'DAILY',
       headers: loadHeaders(_this.props.options),
       locale: _this.props.locale ? _this.props.locale : 'en'
     };

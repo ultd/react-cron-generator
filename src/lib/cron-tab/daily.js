@@ -20,6 +20,10 @@ export default class DailyCron extends Component {
 		this.state.value = this.props.value
 		this.state.every = this.props.value[3] !== '?'
 	}
+	componentDidMount() {
+		this.setState({ every: true })
+		this.props.onChange()
+	}
 
 	onDayChange(e) {
 		if (!e.target.value || (e.target.value > 0 && e.target.value < 32)) {
@@ -84,7 +88,7 @@ export default class DailyCron extends Component {
 						value={
 							this.state.value[3].split('/')[1]
 								? this.state.value[3].split('/')[1]
-								: ''
+								: '1'
 						}
 					/>
 					<span>&nbsp;{translateFn('day(s)')}</span>
