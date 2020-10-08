@@ -10,9 +10,10 @@ import cronstrue from 'cronstrue/i18n';
 import { metadata, loadHeaders } from './meta';
 import shortid from 'shortid';
 var defClassNameProps = {
-  headerItemClassName: null,
-  containerClassName: null,
   headersContainerClassName: null,
+  headerItemClassName: null,
+  headerItemSelectedClassName: null,
+  containerClassName: null,
   cronViewClassName: null,
   resultTextCronName: null
 };
@@ -117,10 +118,17 @@ var Cron = /*#__PURE__*/function (_Component) {
       var _this3 = this;
 
       return this.state.headers.map(function (d) {
+        var classNames = [_this3.props.headerItemClassName];
+
+        if (_this3.state.selectedTab === d) {
+          classNames.push(_this3.props.headerItemSelectedClassName);
+        }
+
+        console.log(classNames);
         return /*#__PURE__*/React.createElement("li", {
           key: shortid(),
           onClick: _this3.tabChanged.bind(_this3, d),
-          className: _this3.props.headerItemClassName
+          className: classNames.join(' ')
         }, _this3.translate(d));
       });
     }

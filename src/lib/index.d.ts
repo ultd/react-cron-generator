@@ -18,7 +18,8 @@ export interface CronProps {
     options?: { headers?: HEADER[] }
     containerClassName?: React.CSSProperties
     headerItemClassName?: React.CSSProperties
-	headersContainerClassName?: React.CSSProperties
+    headerItemSelectedClassName?: React.CSSProperties
+    headersContainerClassName?: React.CSSProperties
 	cronViewClassName?: React.CSSProperties
 	resultTextCronName?: React.CSSProperties
 } 
