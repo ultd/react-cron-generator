@@ -5,9 +5,10 @@ import { metadata, loadHeaders } from './meta'
 import shortid from 'shortid'
 
 const defClassNameProps = {
-	headerItemClassName: null,
-	containerClassName: null,
 	headersContainerClassName: null,
+	headerItemClassName: null,
+	headerItemSelectedClassName: null,
+	containerClassName: null,
 	cronViewClassName: null,
 	resultTextCronName: null,
 }
@@ -80,11 +81,16 @@ export default class Cron extends Component {
 
 	getHeaders() {
 		return this.state.headers.map((d) => {
+			const classNames = [this.props.headerItemClassName]
+			if(this.state.selectedTab === d){
+				classNames.push(this.props.headerItemSelectedClassName)
+			}
+			console.log(classNames)
 			return (
 				<li
 					key={shortid()}
 					onClick={this.tabChanged.bind(this, d)}
-					className={this.props.headerItemClassName}
+					className={classNames.join(' ')}
 				>
 					{this.translate(d)}
 				</li>
